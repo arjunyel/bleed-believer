@@ -18,7 +18,7 @@ export class MetaStorage {
 
     static getStorage(target: any): MetaStorage | undefined {
         if (target == null) {
-            throw new UndefinedTargetError();
+            return undefined;
         }
 
         const storage = target[MetaStorage._symbol];

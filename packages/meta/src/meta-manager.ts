@@ -34,7 +34,7 @@ export class MetaManager<T extends Metadata> {
             return undefined;
         }
 
-        return storage.get<T>(this._symbol);
+        return storage.get<T>(this._symbol, permisive as any);
     }
 
     /**
