@@ -2,9 +2,9 @@ import { rm, writeFile } from 'fs/promises';
 import { resolve } from 'path';
 import test from 'ava';
 
-import { DIContainer } from './di-container.js';
-import { Config, Json } from './case-02.example.js';
 import type { Readable, Writable, AppconfigData, OrmconfigData } from './case-02.example.js';
+import { Config, Json } from './case-02.example.js';
+import { DIContainer } from './di-container.js';
 
 test.before(async () => {
     await writeFile(resolve('./appconfig.json'), '{ "port": 8080, "timeout": 30 }');
