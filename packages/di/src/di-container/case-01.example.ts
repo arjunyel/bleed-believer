@@ -1,4 +1,3 @@
-import { cursorTo } from 'readline';
 import { Inject } from '../inject/index.js';
 import { Injectable } from '../injectable/index.js';
 

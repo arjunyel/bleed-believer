@@ -1,6 +1,7 @@
 import { readFile, writeFile } from 'fs/promises';
 import { resolve } from 'path';
 
+import { Injectable } from '../injectable/index.js';
 import { Inject } from '../inject/index.js';
 
 export interface Readable<T> {
@@ -11,11 +12,17 @@ export interface Writable<T> {
     write(data: T): Promise<void>;
 }
 
-export interface ConfigData {
+export interface AppconfigData {
     port: number;
     timeout: number;
 }
 
+export interface OrmconfigData {
+    port: number;
+    db: string;
+}
+
+@Injectable()
 export class Json<T> implements Readable<T>, Writable<T> {
     #path: string;
     get path(): string {
@@ -39,12 +46,9 @@ export class Json<T> implements Readable<T>, Writable<T> {
 
 export class Config {
     @Inject(Json, './appconfig.json')
-    declare appconfig: Json<ConfigData>;
+    declare appconfig: Json<AppconfigData>;
 
     @Inject(Json, './ormconfig.json')
-    declare ormconfig: Json<ConfigData>;
-
-    constructor(private _path: string) {
-    }
+    declare ormconfig: Json<AppconfigData>;
 }
 
