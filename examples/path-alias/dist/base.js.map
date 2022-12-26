@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/base.ts"],"sourcesContent":["export function base(): void {\n    console.log('baseeee!!');\n}"],"names":["base","console","log"],"mappings":"AAAA,OAAO,SAASA,OAAa;IACzBC,QAAQC,GAAG,CAAC;AAChB,CAAC"}

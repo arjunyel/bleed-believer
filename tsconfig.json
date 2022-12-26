@@ -13,5 +13,11 @@
 
         "sourceMap": true,
         "declaration": true,
-    }
+    },
+    "exclude": [
+        "./packages/*/dist",
+        "./**/*.example.ts",
+        "./**/*.test.ts",
+        "./examples/*"
+    ]
 }
